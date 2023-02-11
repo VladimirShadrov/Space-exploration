@@ -7,185 +7,191 @@
     <title>Космос и человек</title>
   <script defer src="bundle.js"></script><link href="styles/styles.css" rel="stylesheet"></head>
   <body>
-    <header class="header">
-      <div class="container">
-        <div class="header__wrapper">
-          <div class="header__logo">
-            <img src="./images/logo.jpg" alt="logo" />
+    <div id="app">
+      <header class="header">
+        <div class="container">
+          <div class="header__wrapper">
+            <div class="header__logo">
+              <img src="./images/logo.jpg" alt="logo" />
+            </div>
+            <div class="header__title">Ольга Шадрова</div>
+            <div class="header__btn">
+              <button class="button yellow-button">Стать космонавтом</button>
+            </div>
           </div>
-          <div class="header__title">Ольга Шадрова</div>
-          <div class="header__btn">
+          <div class="menu">
+            <a href="#" class="menu__item">Космонавты</a>
+            <a href="#" class="menu__item">Ракеты</a>
+            <a href="#" class="menu__item">Воздействие на организм</a>
+          </div>
+        </div>
+        <div class="mobile-header">
+          <div class="mobile-header__menu">
+            <div class="mobile-menu__line"></div>
+          </div>
+          <div class="mobile-header__title">Ольга Шадрова</div>
+          <div class="mobile-header__btn">
             <button class="button yellow-button">Стать космонавтом</button>
           </div>
-        </div>
-        <div class="menu">
-          <a href="#" class="menu__item">Космонавты</a>
-          <a href="#" class="menu__item">Ракеты</a>
-          <a href="#" class="menu__item">Воздействие на организм</a>
-        </div>
-      </div>
-      <div class="mobile-header">
-        <div class="mobile-header__menu">
-          <div class="mobile-menu__line"></div>
-        </div>
-        <div class="mobile-header__title">Ольга Шадрова</div>
-        <div class="mobile-header__btn">
-          <button class="button yellow-button">Стать космонавтом</button>
-        </div>
-        <div class="mobile-menu mobile-menu__hidden">
-          <div class="mobile-menu__head">
-            <div class="mobile-menu__close"></div>
-          </div>
-          <div class="mobile-menu__content">
-            <div class="mobile-menu__item">Космонавты</div>
-            <div class="mobile-menu__item">Ракеты</div>
-            <div class="mobile-menu__item">Воздействие на организм</div>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div class="preview">
-      <div class="container">
-        <div class="preview__header">Влияние космического пространства на организм человека</div>
-        <div class="preview__wrapper">
-          <div class="slider">
-            <div class="slider__container">
-              <div class="slider__row">
-                <div class="slider__item">
-                  <img src="./images/slider/slider_item1.jpg" alt="rocket" />
-                </div>
-                <div class="slider__item">
-                  <img src="./images/slider/slider_item2.jpg" alt="rocket" />
-                </div>
-                <div class="slider__item">
-                  <img src="./images/slider/slider_item3.jpg" alt="rocket" />
-                </div>
-                <div class="slider__item">
-                  <img src="./images/slider/slider_item4.jpg" alt="rocket" />
-                </div>
-                <div class="slider__item">
-                  <img src="./images/slider/slider_item5.jpg" alt="rocket" />
-                </div>
-              </div>
-              <button class="slider__btn-prev">
-                <img src="./images/slider/btn_prev.png" alt="button" />
-              </button>
-              <button class="slider__btn-next">
-                <img src="./images/slider/btn_next.png" alt="button" />
-              </button>
+          <div class="mobile-menu mobile-menu__hidden">
+            <div class="mobile-menu__head">
+              <div class="mobile-menu__close"></div>
+            </div>
+            <div class="mobile-menu__content">
+              <div class="mobile-menu__item">Космонавты</div>
+              <div class="mobile-menu__item">Ракеты</div>
+              <div class="mobile-menu__item">Воздействие на организм</div>
             </div>
           </div>
-          <div class="preview__title-wrapper">
-            <h3 class="preview__title">Космонавтика имеет безграничное будущее, и ее перспективы беспредельны, как сама Вселенная.</h3>
-            <span class="preview__title-author">С.П. Королев</span>
+        </div>
+      </header>
+      <!-- 
+      <div class="preview">
+        <div class="container">
+          <div class="preview__header">Влияние космического пространства на организм человека</div>
+          <div class="preview__wrapper">
+            <div class="slider">
+              <div class="slider__container">
+                <div class="slider__row">
+                  <div class="slider__item">
+                    <img src="./images/slider/slider_item1.jpg" alt="rocket" />
+                  </div>
+                  <div class="slider__item">
+                    <img src="./images/slider/slider_item2.jpg" alt="rocket" />
+                  </div>
+                  <div class="slider__item">
+                    <img src="./images/slider/slider_item3.jpg" alt="rocket" />
+                  </div>
+                  <div class="slider__item">
+                    <img src="./images/slider/slider_item4.jpg" alt="rocket" />
+                  </div>
+                  <div class="slider__item">
+                    <img src="./images/slider/slider_item5.jpg" alt="rocket" />
+                  </div>
+                </div>
+                <button class="slider__btn-prev">
+                  <img src="./images/slider/btn_prev.png" alt="button" />
+                </button>
+                <button class="slider__btn-next">
+                  <img src="./images/slider/btn_next.png" alt="button" />
+                </button>
+              </div>
+            </div>
+            <div class="preview__title-wrapper">
+              <h3 class="preview__title">Космонавтика имеет безграничное будущее, и ее перспективы беспредельны, как сама Вселенная.</h3>
+              <span class="preview__title-author">С.П. Королев</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+      <section class="category">
+        <div class="container">
+          <div class="category__wrapper">
+            <div class="category__content-wrapper">
+              <div class="category__left">
+                <div class="category__image">
+                  <img src="./images/category/category_kosmo.jpg" alt="category_image" />
+                </div>
+              </div>
+              <div class="category__right">
+                <div class="category__title-wrapper">
+                  <h2 class="category__title">Российские и советские космонавты</h2>
+                </div>
+                <div class="category__text-wrapper">
+                  <p class="category__text">
+                    Юрий Гагарин – «Кедр», Алексей Леонов – «Алмаз», Сергей Крикалев – «Базальт», Светлана Савицкая – «Памир-2». Кто из детей хотя бы
+                    раз не мечтал стать космонавтом и с орбиты подать собственные позывные, которые услышит весь мир? Кому не хотелось хотя бы однажды,
+                    надев скафандр, оказаться в сверкающей бездне открытого космоса?
+                  </p>
+                  <p class="category__text">
+                    Но какой бы романтичной ни казалась профессия космонавт, она требует очень серьезной подготовки: долгого обучения, изматывающих
+                    физических тренировок, психологического напряжения. Только выдержав все подготовительные этапы, человек может стать покорителем
+                    космоса – сильным духом и здоровьем, для которого не существует границ в пространстве и времени.
+                  </p>
+                </div>
+                <div class="category__buttons-wrapper">
+                  <button class="button yellow-button">Подробнее о космонавтах</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="category">
+        <div class="container">
+          <div class="category__wrapper">
+            <div class="category__content-wrapper">
+              <div class="category__left">
+                <div class="category__image">
+                  <img src="./images/category/category_kosmo.jpg" alt="category_image" />
+                </div>
+              </div>
+              <div class="category__right">
+                <div class="category__title-wrapper">
+                  <h2 class="category__title">Российские и советские космонавты</h2>
+                </div>
+                <div class="category__text-wrapper">
+                  <p class="category__text">
+                    Юрий Гагарин – «Кедр», Алексей Леонов – «Алмаз», Сергей Крикалев – «Базальт», Светлана Савицкая – «Памир-2». Кто из детей хотя бы
+                    раз не мечтал стать космонавтом и с орбиты подать собственные позывные, которые услышит весь мир? Кому не хотелось хотя бы однажды,
+                    надев скафандр, оказаться в сверкающей бездне открытого космоса?
+                  </p>
+                  <p class="category__text">
+                    Но какой бы романтичной ни казалась профессия космонавт, она требует очень серьезной подготовки: долгого обучения, изматывающих
+                    физических тренировок, психологического напряжения. Только выдержав все подготовительные этапы, человек может стать покорителем
+                    космоса – сильным духом и здоровьем, для которого не существует границ в пространстве и времени.
+                  </p>
+                </div>
+                <div class="category__buttons-wrapper">
+                  <button class="button yellow-button">Подробнее о космонавтах</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="category">
+        <div class="container">
+          <div class="category__wrapper">
+            <div class="category__content-wrapper">
+              <div class="category__left">
+                <div class="category__image">
+                  <img src="./images/category/category_kosmo.jpg" alt="category_image" />
+                </div>
+              </div>
+              <div class="category__right">
+                <div class="category__title-wrapper">
+                  <h2 class="category__title">Российские и советские космонавты</h2>
+                </div>
+                <div class="category__text-wrapper">
+                  <p class="category__text">
+                    Юрий Гагарин – «Кедр», Алексей Леонов – «Алмаз», Сергей Крикалев – «Базальт», Светлана Савицкая – «Памир-2». Кто из детей хотя бы
+                    раз не мечтал стать космонавтом и с орбиты подать собственные позывные, которые услышит весь мир? Кому не хотелось хотя бы однажды,
+                    надев скафандр, оказаться в сверкающей бездне открытого космоса?
+                  </p>
+                  <p class="category__text">
+                    Но какой бы романтичной ни казалась профессия космонавт, она требует очень серьезной подготовки: долгого обучения, изматывающих
+                    физических тренировок, психологического напряжения. Только выдержав все подготовительные этапы, человек может стать покорителем
+                    космоса – сильным духом и здоровьем, для которого не существует границ в пространстве и времени.
+                  </p>
+                </div>
+                <div class="category__buttons-wrapper">
+                  <button class="button yellow-button">Подробнее о космонавтах</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+       -->
 
-    <section class="category">
-      <div class="container">
-        <div class="category__wrapper">
-          <div class="category__content-wrapper">
-            <div class="category__left">
-              <div class="category__image">
-                <img src="./images/category/category_kosmo.jpg" alt="category_image" />
-              </div>
-            </div>
-            <div class="category__right">
-              <div class="category__title-wrapper">
-                <h2 class="category__title">Российские и советские космонавты</h2>
-              </div>
-              <div class="category__text-wrapper">
-                <p class="category__text">
-                  Юрий Гагарин – «Кедр», Алексей Леонов – «Алмаз», Сергей Крикалев – «Базальт», Светлана Савицкая – «Памир-2». Кто из детей хотя бы
-                  раз не мечтал стать космонавтом и с орбиты подать собственные позывные, которые услышит весь мир? Кому не хотелось хотя бы однажды,
-                  надев скафандр, оказаться в сверкающей бездне открытого космоса?
-                </p>
-                <p class="category__text">
-                  Но какой бы романтичной ни казалась профессия космонавт, она требует очень серьезной подготовки: долгого обучения, изматывающих
-                  физических тренировок, психологического напряжения. Только выдержав все подготовительные этапы, человек может стать покорителем
-                  космоса – сильным духом и здоровьем, для которого не существует границ в пространстве и времени.
-                </p>
-              </div>
-              <div class="category__buttons-wrapper">
-                <button class="button yellow-button">Подробнее о космонавтах</button>
-              </div>
-            </div>
-          </div>
+      <div class="section"></div>
+
+      <footer class="footer">
+        <div class="container">
+          <div class="footer__content">Шадрова Ольга Владимировна, класс 11 "В", ГБОУ школа №2009</div>
         </div>
-      </div>
-    </section>
-    <section class="category">
-      <div class="container">
-        <div class="category__wrapper">
-          <div class="category__content-wrapper">
-            <div class="category__left">
-              <div class="category__image">
-                <img src="./images/category/category_kosmo.jpg" alt="category_image" />
-              </div>
-            </div>
-            <div class="category__right">
-              <div class="category__title-wrapper">
-                <h2 class="category__title">Российские и советские космонавты</h2>
-              </div>
-              <div class="category__text-wrapper">
-                <p class="category__text">
-                  Юрий Гагарин – «Кедр», Алексей Леонов – «Алмаз», Сергей Крикалев – «Базальт», Светлана Савицкая – «Памир-2». Кто из детей хотя бы
-                  раз не мечтал стать космонавтом и с орбиты подать собственные позывные, которые услышит весь мир? Кому не хотелось хотя бы однажды,
-                  надев скафандр, оказаться в сверкающей бездне открытого космоса?
-                </p>
-                <p class="category__text">
-                  Но какой бы романтичной ни казалась профессия космонавт, она требует очень серьезной подготовки: долгого обучения, изматывающих
-                  физических тренировок, психологического напряжения. Только выдержав все подготовительные этапы, человек может стать покорителем
-                  космоса – сильным духом и здоровьем, для которого не существует границ в пространстве и времени.
-                </p>
-              </div>
-              <div class="category__buttons-wrapper">
-                <button class="button yellow-button">Подробнее о космонавтах</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="category">
-      <div class="container">
-        <div class="category__wrapper">
-          <div class="category__content-wrapper">
-            <div class="category__left">
-              <div class="category__image">
-                <img src="./images/category/category_kosmo.jpg" alt="category_image" />
-              </div>
-            </div>
-            <div class="category__right">
-              <div class="category__title-wrapper">
-                <h2 class="category__title">Российские и советские космонавты</h2>
-              </div>
-              <div class="category__text-wrapper">
-                <p class="category__text">
-                  Юрий Гагарин – «Кедр», Алексей Леонов – «Алмаз», Сергей Крикалев – «Базальт», Светлана Савицкая – «Памир-2». Кто из детей хотя бы
-                  раз не мечтал стать космонавтом и с орбиты подать собственные позывные, которые услышит весь мир? Кому не хотелось хотя бы однажды,
-                  надев скафандр, оказаться в сверкающей бездне открытого космоса?
-                </p>
-                <p class="category__text">
-                  Но какой бы романтичной ни казалась профессия космонавт, она требует очень серьезной подготовки: долгого обучения, изматывающих
-                  физических тренировок, психологического напряжения. Только выдержав все подготовительные этапы, человек может стать покорителем
-                  космоса – сильным духом и здоровьем, для которого не существует границ в пространстве и времени.
-                </p>
-              </div>
-              <div class="category__buttons-wrapper">
-                <button class="button yellow-button">Подробнее о космонавтах</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer class="footer">
-      <div class="container">
-        <div class="footer__content">Шадрова Ольга Владимировна, класс 11 "В", ГБОУ школа №2009</div>
-      </div>
-    </footer>
+      </footer>
+    </div>
   </body>
 </html>
