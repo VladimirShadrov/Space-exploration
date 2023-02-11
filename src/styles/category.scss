@@ -153,6 +153,7 @@
 
     &::before {
       bottom: -16px;
+      width: 60%;
       border-right: 16px solid transparent;
       border-top: 16px solid #1d1e1f;
     }
@@ -182,7 +183,7 @@
   }
 }
 
-@media (max-width: 550px) {
+@media (max-width: 450px) {
   .category__image {
     max-width: max-content;
     max-height: max-content;
@@ -200,5 +201,10 @@
   .category__title {
     font-size: 26px;
     line-height: 26px;
+  }
+  .category__content-wrapper {
+    &::before {
+      width: 50%;
+    }
   }
 }
