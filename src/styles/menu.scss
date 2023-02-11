@@ -1,0 +1,170 @@
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5px;
+}
+
+.menu__item {
+  padding: 10px 25px;
+  color: #b5b7b7;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  transition: all 0.3s;
+  position: relative;
+  display: block;
+
+  &:hover {
+    color: #fff;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    border-radius: 25px;
+    transition: all 0.3s;
+  }
+
+  &:hover::before {
+    width: calc(100% - 50px);
+    left: 25px;
+  }
+}
+
+.mobile-header__menu {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  cursor: pointer;
+
+  &:hover::after,
+  &:hover::before,
+  &:hover > .mobile-menu__line {
+    width: 100%;
+  }
+
+  &::after,
+  &::before {
+    content: '';
+    width: calc(100% - 10px);
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
+  }
+
+  &::before {
+    top: 5px;
+  }
+
+  &::after {
+    bottom: 5px;
+  }
+}
+
+.mobile-menu__line {
+  width: calc(100% - 10px);
+  height: 2px;
+  background: white;
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+  transition: all 0.3s;
+}
+
+.mobile-header__title {
+  color: white;
+  font-family: 'Yeseva One', cursive;
+  font-size: 30px;
+  line-height: 35px;
+  text-align: center;
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  padding: 16px;
+  transition: all 0.3s;
+}
+
+.mobile-menu__head {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.mobile-menu__close {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+
+  &::after,
+  &::before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    top: calc(50% - 1px);
+    left: 0;
+    background: #b5b7b7;
+    transition: all 0.3s;
+  }
+
+  &::after {
+    transform: rotate(45deg);
+  }
+  &::before {
+    transform: rotate(-45deg);
+  }
+
+  &:hover::before,
+  &:hover::after {
+    background: white;
+  }
+}
+
+.mobile-menu__item {
+  padding: 6px 0;
+  cursor: pointer;
+  color: #b5b7b7;
+  margin-bottom: 8px;
+  transition: all 0.3s;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.mobile-menu__hidden {
+  transform: translateX(-100%);
+}
+
+@media (max-width: 650px) {
+  .menu {
+    display: none;
+  }
+
+  .mobile-header__title {
+    font-size: 25px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 650px) {
+  .mobile-header__title {
+    font-size: 24px;
+    line-height: 25px;
+  }
+}

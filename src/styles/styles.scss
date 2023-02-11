@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Yeseva+One&display=swap');
+@import './header.scss';
+@import './menu.scss';
+@import './buttons.scss';
+@import './preview.scss';
+@import './slider.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  line-height: 22px;
+  font-family: 'Roboto', sans-serif;
+  background: url('../images/body_background.jpg');
+  background-attachment: fixed;
+}
+
+.container {
+  max-width: 1450px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.hide {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  body {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}

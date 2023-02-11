@@ -1,0 +1,92 @@
+.slider__container {
+  overflow: hidden;
+  position: relative;
+}
+
+.slider__row {
+  display: flex;
+  align-items: stretch;
+  width: 500%;
+  transition: all 0.3s;
+}
+
+.slider__item {
+  width: 20%;
+  display: flex;
+  max-height: 815px;
+
+  & > img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.slider__btn-prev,
+.slider__btn-next {
+  position: absolute;
+  border: none;
+  outline: none;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.9);
+  }
+
+  & > img {
+    display: block;
+    width: 70%;
+    pointer-events: none;
+  }
+}
+
+.slider__btn-prev {
+  top: calc(50% - 25px);
+  left: 40px;
+  padding-right: 5px;
+}
+
+.slider__btn-next {
+  top: calc(50% - 25px);
+  right: 40px;
+  padding-left: 5px;
+}
+
+@media (max-width: 950px) {
+  .slider__btn-prev,
+  .slider__btn-next {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 750px) {
+  .slider__btn-prev {
+    left: 20px;
+  }
+  .slider__btn-next {
+    right: 20px;
+  }
+}
+
+@media (max-width: 550px) {
+  .slider__btn-prev,
+  .slider__btn-next {
+    width: 35px;
+    height: 35px;
+  }
+
+  .slider__btn-prev {
+    left: 16px;
+  }
+  .slider__btn-next {
+    right: 16px;
+  }
+}
