@@ -1,14 +1,11 @@
 .preview {
-  padding-bottom: 60px;
+  position: relative;
 }
 
 .preview__wrapper {
   position: relative;
-}
-
-.preview {
+  padding-bottom: 60px;
   background: #000;
-  position: relative;
 }
 
 .preview__header {
@@ -27,7 +24,7 @@
   color: white;
   font-style: italic;
   position: absolute;
-  bottom: 70px;
+  bottom: 130px;
   left: 70px;
   width: 45%;
   padding: 40px;
@@ -70,9 +67,6 @@
 }
 
 @media (max-width: 950px) {
-  .preview {
-    height: 700px;
-  }
   .preview__title-wrapper {
     padding: 15px;
   }
@@ -83,9 +77,10 @@
 }
 
 @media (max-width: 850px) {
-  .preview {
-    height: auto;
-    padding-bottom: 40px;
+  .preview__wrapper {
+    position: relative;
+    padding-bottom: 30px;
+    background: #000;
   }
 
   .preview__title-wrapper {
