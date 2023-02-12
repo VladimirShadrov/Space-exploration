@@ -1,5 +1,6 @@
 .bread-crumbs {
   display: flex;
+  overflow: hidden;
 
   &__item {
     color: white;
@@ -27,5 +28,14 @@
       right: 0;
       color: white;
     }
+  }
+}
+
+@media (max-width: 550px) {
+  .bread-crumbs {
+    font-size: 12px;
+  }
+  .bread-crumbs__item {
+    padding: 0 10px 0 5px;
   }
 }
