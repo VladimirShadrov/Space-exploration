@@ -3,6 +3,10 @@
   border-bottom: 1px solid #48494a;
 }
 
+.header__content-wrapper {
+  flex-grow: 1;
+}
+
 .header__wrapper {
   display: flex;
   justify-content: space-between;

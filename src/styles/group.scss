@@ -1,5 +1,12 @@
+.group {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
 .group__wrapper {
   background: white;
+  display: flex;
+  flex-direction: column;
 }
 .group__image-wrapper {
   & > img {
@@ -10,6 +17,7 @@
 .group__content {
   padding: 32px;
   background: rgb(55, 67, 94);
+  flex-grow: 1;
 }
 
 .group__title {
@@ -23,6 +31,7 @@
 .grop__text {
   margin-bottom: 32px;
   color: rgba(255, 255, 255, 1);
+  text-align: justify;
 }
 
 .group__items {
