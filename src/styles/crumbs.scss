@@ -1,0 +1,31 @@
+.bread-crumbs {
+  display: flex;
+
+  &__item {
+    color: white;
+    text-decoration: none;
+    position: relative;
+    padding: 0 20px 0 10px;
+
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+      font-weight: bold;
+
+      &::before {
+        content: '';
+      }
+    }
+
+    &::before {
+      content: '>';
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: white;
+    }
+  }
+}
