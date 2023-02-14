@@ -8,6 +8,11 @@
   outline: none;
   cursor: pointer;
   transition: all 0.3s;
+
+  &:disabled {
+    cursor: not-allowed;
+    background: #85969b;
+  }
 }
 
 .yellow-button {
@@ -15,6 +20,10 @@
 
   &:hover {
     background: rgb(212, 179, 15);
+  }
+
+  &:hover:disabled {
+    background: #85969b;
   }
 }
 
