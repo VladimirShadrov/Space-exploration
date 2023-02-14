@@ -55,6 +55,23 @@
   justify-content: flex-end;
 }
 
+.anketa__result {
+  padding-bottom: 200px;
+}
+
+.anketa__result-title {
+  font-size: 22px;
+  line-height: 27px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.anketa__result-text {
+  text-align: justify;
+  text-indent: 30px;
+  line-height: 25px;
+}
+
 @media (max-width: 850px) {
   .anketa__content {
     flex-direction: column;
@@ -97,5 +114,16 @@
     &:nth-child(4) {
       margin-bottom: 16px;
     }
+  }
+
+  .anketa__result {
+    padding-bottom: 70px;
+  }
+
+  .anketa__result-title {
+    margin-bottom: 16px;
+  }
+  .anketa__result-text {
+    line-height: 20px;
   }
 }
