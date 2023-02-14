@@ -1,0 +1,101 @@
+.anketa {
+  padding: 32px;
+  background: #3870b1;
+}
+
+.anketa__content {
+  display: flex;
+}
+
+.anketa__image-wrapper,
+.anketa__filters-wrapper {
+  width: 50%;
+}
+
+.anketa__image-wrapper {
+  padding-right: 16px;
+  & > img {
+    display: block;
+    width: 100%;
+  }
+}
+
+.anketa__filters-wrapper {
+  padding-left: 16px;
+}
+
+.anketa__title {
+  text-align: center;
+  margin-bottom: 32px;
+  color: white;
+  font-size: 26px;
+}
+
+.anketa__filters {
+  display: flex;
+  flex-direction: column;
+}
+
+.anketa__filter {
+  margin-bottom: 16px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  padding: 8px 40px 8px 12px;
+  font-size: 18px;
+
+  &:nth-child(4) {
+    margin-bottom: 32px;
+  }
+}
+
+.anketa__buttons-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (max-width: 850px) {
+  .anketa__content {
+    flex-direction: column;
+  }
+
+  .anketa__image-wrapper,
+  .anketa__filters-wrapper {
+    width: 100%;
+  }
+
+  .anketa__image-wrapper {
+    padding-right: 0;
+    margin-bottom: 32px;
+  }
+
+  .anketa__filters-wrapper {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .anketa {
+    padding: 16px;
+  }
+
+  .anketa__image-wrapper {
+    padding-right: 0;
+    margin-bottom: 16px;
+  }
+
+  .anketa__title {
+    margin-bottom: 16px;
+    font-size: 22px;
+  }
+
+  .anketa__filter {
+    font-size: 16px;
+    height: 35px;
+
+    &:nth-child(4) {
+      margin-bottom: 16px;
+    }
+  }
+}
