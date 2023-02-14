@@ -54,3 +54,48 @@
   display: flex;
   justify-content: flex-end;
 }
+
+@media (max-width: 850px) {
+  .anketa__content {
+    flex-direction: column;
+  }
+
+  .anketa__image-wrapper,
+  .anketa__filters-wrapper {
+    width: 100%;
+  }
+
+  .anketa__image-wrapper {
+    padding-right: 0;
+    margin-bottom: 32px;
+  }
+
+  .anketa__filters-wrapper {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .anketa {
+    padding: 16px;
+  }
+
+  .anketa__image-wrapper {
+    padding-right: 0;
+    margin-bottom: 16px;
+  }
+
+  .anketa__title {
+    margin-bottom: 16px;
+    font-size: 22px;
+  }
+
+  .anketa__filter {
+    font-size: 16px;
+    height: 35px;
+
+    &:nth-child(4) {
+      margin-bottom: 16px;
+    }
+  }
+}
