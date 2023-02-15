@@ -5,6 +5,6 @@ import { App } from './javascript/components/app';
 (() => {
   document.addEventListener('DOMContentLoaded', () => {
     const app = new App();
-    document.body.append(app);
+    document.body.append(app.element);
   });
 })();
