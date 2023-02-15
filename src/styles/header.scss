@@ -17,15 +17,19 @@
 .header__logo {
   padding: 5px;
   border-right: 1px solid #48494a;
-  cursor: pointer;
   padding-right: 18px;
   width: 70px;
   height: 70px;
 
-  & > img {
+  &-link {
     display: block;
-    width: 100%;
-    border-radius: 20px;
+
+    & > img {
+      display: block;
+      width: 100%;
+      border-radius: 20px;
+      pointer-events: none;
+    }
   }
 }
 

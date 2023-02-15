@@ -96,6 +96,7 @@
   background: #000;
   padding: 16px;
   transition: all 0.3s;
+  z-index: 2;
 }
 
 .mobile-menu__head {
@@ -136,6 +137,8 @@
 }
 
 .mobile-menu__item {
+  display: block;
+  text-decoration: none;
   padding: 6px 0;
   cursor: pointer;
   color: #b5b7b7;
