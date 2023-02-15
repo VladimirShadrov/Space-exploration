@@ -7,17 +7,17 @@ export const headerSettings = {
     {
       title: 'Космонавты',
       name: 'spacers',
-      linkName: 'group',
+      linkName: '/spacers',
     },
     {
       title: 'Ракеты',
       name: 'rockets',
-      linkName: 'group',
+      linkName: '/rockets',
     },
     {
       title: 'Воздействие на организм',
       name: 'effect',
-      linkName: 'group',
+      linkName: '/effect',
     },
   ],
   logoIconLink: './images/logo.jpg" alt="logo"',
