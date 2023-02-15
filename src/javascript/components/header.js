@@ -16,6 +16,8 @@ export class Header {
 
     const mobileHeaderButton = this.header.querySelector('.mobile-header__btn');
     mobileHeaderButton.append(new Button(settings.buttonSettings).element);
+
+    this.addMenuItems(settings);
   }
 
   getHeaderHtmlString(settings) {
@@ -51,6 +53,25 @@ export class Header {
         </div>
       </header>
     `;
+  }
+
+  addMenuItems(config) {
+    const mainMenuContainter = this.header.querySelector('.menu');
+    const mobileMenuContainter = this.header.querySelector('.mobile-menu__content');
+
+    config.menuItems.forEach((item) => {
+      const menuItem = new DOMParser().parseFromString(`<a href="${item.linkName}" class="menu__item" >${item.title}</a>`, 'text/html').body
+        .firstChild;
+
+      mainMenuContainter.append(menuItem);
+    });
+
+    config.menuItems.forEach((item) => {
+      const menuItem = new DOMParser().parseFromString(`<a href="${item.linkName}" class="mobile-menu__item" >${item.title}</a>`, 'text/html').body
+        .firstChild;
+
+      mobileMenuContainter.append(menuItem);
+    });
   }
 
   get element() {
