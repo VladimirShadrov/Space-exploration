@@ -29,3 +29,20 @@ export const headerSettings = {
     text: 'Cтать космонавтом',
   },
 };
+
+export const mainPageSettings = {
+  previewSettings: {
+    slider: {
+      slides: [
+        './images/slider/slider_item1.jpg',
+        './images/slider/slider_item2.jpg',
+        './images/slider/slider_item3.jpg',
+        './images/slider/slider_item4.jpg',
+        './images/slider/slider_item5.jpg',
+      ],
+    },
+    theme: 'Влияние космического пространства на организм человека',
+    slogan: 'Космонавтика имеет безграничное будущее, и ее перспективы беспредельны, как сама Вселенная.',
+    sloganAuthor: 'С.П. Королев',
+  },
+};

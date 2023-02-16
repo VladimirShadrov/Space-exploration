@@ -1,11 +1,17 @@
 import { createElement } from '../lib/functions';
+import { mainPageSettings } from '../data/data';
+import { MainPage } from './mainPage';
 
 export class Content {
   constructor() {
-    this.init();
+    const settings = mainPageSettings;
+    this.init(settings);
   }
-  init() {
+  init(settings) {
     this.content = createElement('div', 'content');
+    this.mainPage = new MainPage(settings);
+
+    this.content.append(this.mainPage.element);
   }
 
   get element() {
