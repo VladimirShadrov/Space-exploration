@@ -15,7 +15,22 @@
   }
 }
 
-.yellow-button {
+.link-button {
+  padding: 15px 20px 12px 20px;
+  display: block;
+  border: none;
+  border-radius: 25px;
+  font-size: 14px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  outline: none;
+  transition: all 0.3s;
+}
+
+.yellow-button,
+.link-button__yellow {
   background: rgb(245, 207, 17);
 
   &:hover {
@@ -28,13 +43,15 @@
 }
 
 @media (max-width: 850px) {
-  .button {
+  .button,
+  .link-button {
     padding: 12px 15px 10px 15px;
   }
 }
 
 @media (max-width: 550px) {
-  .button {
+  .button,
+  .link-button {
     font-size: 12px;
   }
 }
