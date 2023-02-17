@@ -75,3 +75,114 @@ export const mainPageSettings = {
     },
   ],
 };
+
+export const categoriesSettings = {
+  spacers: {
+    mainImage: './images/group/panorama1.jpg',
+    crumbs: [
+      { title: 'Главная', link: '' },
+      { title: 'Космонавты', link: null },
+    ],
+    title: 'Космонавты',
+    text: 'На этой странице можно узнать о знаменитых космонавтах',
+    blocks: [
+      {
+        image: './images/group/spacers/gagarin/gagarin1.jpg',
+        title: 'Юрий Алексеевич Гагарин',
+        description: 'Первый человек в космосе',
+        link: '/spacers/gagarin',
+      },
+      {
+        image: './images/group/spacers/titov/titov3.jpg',
+        title: 'Герман Степанович Титов',
+        description: 'Первый человек, совершивший длительный космический полет',
+        link: '/spacers/titov',
+      },
+      {
+        image: './images/group/spacers/leonov/leonov4.jpg',
+        title: 'Алексей Архипович Леонов',
+        description: 'Первый человек в открытом космосе',
+        link: '/spacers/leonov',
+      },
+      {
+        image: './images/group/spacers/savitskaya/savitskaya1.jpg',
+        title: 'Светлана Евгеньевна Савицкая',
+        description: 'Первая женщина, вышедшая в открытый космос',
+        link: '/spacers/savitskaya',
+      },
+    ],
+    details: {},
+  },
+  rockets: {
+    mainImage: './images/group/panorama2.jpg',
+    crumbs: [
+      { title: 'Главная', link: '' },
+      { title: 'Космические аппараты', link: null },
+    ],
+    title: 'Космические аппараты',
+    text: 'На этой странице можно узнать о космических аппаратах',
+    blocks: [
+      {
+        image: './images/group/spacers/gagarin/gagarin1.jpg',
+        title: 'Юрий Алексеевич Гагарин',
+        description: 'Первый человек в космосе',
+        link: '/spacers/gagarin',
+      },
+      {
+        image: './images/group/spacers/titov/titov3.jpg',
+        title: 'Герман Степанович Титов',
+        description: 'Первый человек, совершивший длительный космический полет',
+        link: '/spacers/titov',
+      },
+      {
+        image: './images/group/spacers/leonov/leonov4.jpg',
+        title: 'Алексей Архипович Леонов',
+        description: 'Первый человек в открытом космосе',
+        link: '/spacers/leonov',
+      },
+      {
+        image: './images/group/spacers/savitskaya/savitskaya1.jpg',
+        title: 'Светлана Евгеньевна Савицкая',
+        description: 'Первая женщина, вышедшая в открытый космос',
+        link: '/spacers/savitskaya',
+      },
+    ],
+    details: {},
+  },
+  effect: {
+    mainImage: './images/group/panorama3.jpg',
+    crumbs: [
+      { title: 'Главная', link: '' },
+      { title: 'Влияние на организм', link: null },
+    ],
+    title: 'Влияние космического пространства на организм человека',
+    text: 'На этой странице можно узнать о влиянии космического пространства на организм человека',
+    blocks: [
+      {
+        image: './images/group/spacers/gagarin/gagarin1.jpg',
+        title: 'Юрий Алексеевич Гагарин',
+        description: 'Первый человек в космосе',
+        link: '/spacers/gagarin',
+      },
+      {
+        image: './images/group/spacers/titov/titov3.jpg',
+        title: 'Герман Степанович Титов',
+        description: 'Первый человек, совершивший длительный космический полет',
+        link: '/spacers/gagarin',
+      },
+      {
+        image: './images/group/spacers/leonov/leonov4.jpg',
+        title: 'Алексей Архипович Леонов',
+        description: 'Первый человек в открытом космосе',
+        link: '/spacers/gagarin',
+      },
+      {
+        image: './images/group/spacers/savitskaya/savitskaya1.jpg',
+        title: 'Светлана Евгеньевна Савицкая',
+        description: 'Первая женщина, вышедшая в открытый космос',
+        link: '/spacers/gagarin',
+      },
+    ],
+    details: {},
+  },
+};
