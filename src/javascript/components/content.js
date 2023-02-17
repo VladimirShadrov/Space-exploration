@@ -6,6 +6,8 @@ export class Content {
   constructor() {
     const settings = mainPageSettings;
     this.init(settings);
+
+    // setTimeout(() => this.mainPage.destroy(), 3000);
   }
   init(settings) {
     this.content = createElement('div', 'content');
