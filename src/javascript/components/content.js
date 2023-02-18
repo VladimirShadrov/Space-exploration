@@ -1,27 +1,77 @@
 import { createElement } from '../lib/functions';
-import { mainPageSettings } from '../data/data';
-import { categoriesSettings } from '../data/data';
-import { MainPage } from './mainPage';
-import { Categories } from './categories';
-import { DetailPage } from './detailPage';
+import { mainPageData } from '../data/data';
+import { categoriesPageData } from '../data/data';
+import { detailPageData } from '../data/data';
+
+import { routes } from '../router/routes';
+import { router } from '../router/router';
 
 export class Content {
   constructor() {
     const settings = {
-      mainPageSettings,
-      categoriesSettings,
+      mainPageData,
+      categoriesPageData,
+      detailPageData,
     };
-    this.init(settings);
+    this.routes = routes;
 
-    // setTimeout(() => this.mainPage.destroy(), 3000);
+    this.init(settings);
   }
   init(settings) {
     this.content = createElement('div', 'content');
-    this.mainPage = new MainPage(settings.mainPageSettings);
-    this.categoriesPage = new Categories(settings.categoriesSettings.effect);
-    this.detailsPage = new DetailPage(settings.categoriesSettings.spacers.blocks[3].details);
 
-    this.content.append(this.detailsPage.element);
+    this.pageData;
+    this.detailsData;
+    this.id = null;
+    this.activePage;
+
+    this.start(settings);
+  }
+
+  start(settings) {
+    if (this.routes) {
+      this.initRoutes(settings);
+    }
+  }
+
+  initRoutes(settings) {
+    window.addEventListener('hashchange', this.renderRoute.bind(this, settings));
+    this.renderRoute(settings);
+  }
+
+  renderRoute(settings) {
+    const url = router.getUrl();
+    const route = routes.find((rout) => rout.path === url);
+
+    if (this.activePage) {
+      this.activePage.destroy();
+    }
+
+    if (route) {
+      window.scrollTo(0, 0);
+
+      switch (url) {
+        case '':
+          this.pageData = settings.mainPageData;
+          this.appendHtml(route, this.pageData);
+          break;
+        case 'spacers':
+        case 'rockets':
+        case 'effect':
+          this.pageData = settings.categoriesPageData[url];
+          this.appendHtml(route, this.pageData);
+          break;
+        default:
+          const detailData = settings.detailPageData.find((block) => block.id === url);
+          this.appendHtml(route, detailData);
+          break;
+      }
+    }
+  }
+
+  appendHtml(route, data) {
+    this.activePage = new route.component(data);
+    this.content.append(this.activePage.element);
   }
 
   get element() {
