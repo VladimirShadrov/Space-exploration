@@ -3,6 +3,7 @@ import { mainPageSettings } from '../data/data';
 import { categoriesSettings } from '../data/data';
 import { MainPage } from './mainPage';
 import { Categories } from './categories';
+import { DetailPage } from './detailPage';
 
 export class Content {
   constructor() {
@@ -17,9 +18,10 @@ export class Content {
   init(settings) {
     this.content = createElement('div', 'content');
     this.mainPage = new MainPage(settings.mainPageSettings);
-    this.categories = new Categories(settings.categoriesSettings.effect);
+    this.categoriesPage = new Categories(settings.categoriesSettings.effect);
+    this.detailsPage = new DetailPage(settings.categoriesSettings.spacers.blocks[3].details);
 
-    this.content.append(this.categories.element);
+    this.content.append(this.detailsPage.element);
   }
 
   get element() {
