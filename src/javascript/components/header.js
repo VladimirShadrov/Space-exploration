@@ -1,5 +1,5 @@
-import { createElement } from '../lib/functions';
 import { Button } from '../lib/button';
+import { Modal } from './modal';
 
 export class Header {
   constructor(settings) {
@@ -12,7 +12,7 @@ export class Header {
     this.header = new DOMParser().parseFromString(this.getHeaderHtmlString(settings), 'text/html').body.firstChild;
 
     const headerButton = this.header.querySelector('.header__btn');
-    headerButton.append(new Button(settings.buttonSettings).element);
+    headerButton.append(new Button(settings.buttonSettings, this.fillQuestionnaire).element);
 
     const mobileHeaderButton = this.header.querySelector('.mobile-header__btn');
     mobileHeaderButton.append(new Button(settings.buttonSettings).element);
@@ -72,6 +72,10 @@ export class Header {
 
       mobileMenuContainter.append(menuItem);
     });
+  }
+
+  fillQuestionnaire() {
+    new Modal();
   }
 
   get element() {
