@@ -16,7 +16,7 @@ export class Categories {
         <div class="container">
           <div class="group__wrapper">
             <div class="group__image-wrapper">
-              <img src="${settings.mainImage}" alt="bg" />
+              <img src="${settings.mainImage}" alt="bg"  />
             </div>
             <div class="group__content">
               <div class="bread-crumbs"></div>
