@@ -12,6 +12,7 @@
   & > img {
     display: block;
     width: 100%;
+    aspect-ratio: 20/5;
   }
 }
 .group__content {
@@ -64,6 +65,7 @@
   & > img {
     display: block;
     width: 100%;
+    aspect-ratio: 16/9;
   }
 }
 
