@@ -1,5 +1,5 @@
 import { Button } from '../lib/button';
-import { Modal } from './modal';
+import { Anketa } from './anketa';
 
 export class Header {
   constructor(settings) {
@@ -75,7 +75,7 @@ export class Header {
   }
 
   fillQuestionnaire() {
-    new Modal();
+    new Anketa();
   }
 
   get element() {
