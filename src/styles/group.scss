@@ -4,7 +4,7 @@
   flex-direction: column;
 }
 .group__wrapper {
-  background: white;
+  background: rgb(55, 67, 94);
   display: flex;
   flex-direction: column;
 }
@@ -52,6 +52,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background: #1d1e1f;
 
   &:hover > .group__item-content > .group__item-title::before {
     background: white;
@@ -60,7 +61,6 @@
 }
 
 .group__item-image {
-  background: white;
   display: flex;
   & > img {
     display: block;
@@ -72,7 +72,6 @@
 .group__item-content {
   position: relative;
   padding: 32px 16px 16px;
-  background: #1d1e1f;
   margin-bottom: 15px;
   flex-grow: 1;
   display: flex;
