@@ -18,6 +18,13 @@ export class Header {
     mobileHeaderButton.append(new Button(settings.buttonSettings).element);
 
     this.addMenuItems(settings);
+
+    this.mobileMenu = this.header.querySelector('.mobile-menu');
+    this.mobileMenuShowButton = this.header.querySelector('.mobile-header__menu');
+    this.mobileMenuShowButton.addEventListener('click', this.showMobileMenu.bind(this));
+
+    this.mobileMenuHideButton = this.header.querySelector('.mobile-menu__close');
+    this.mobileMenuHideButton.addEventListener('click', this.hideMobileMenu.bind(this));
   }
 
   getHeaderHtmlString(settings) {
@@ -66,12 +73,21 @@ export class Header {
       mainMenuContainter.append(menuItem);
     });
 
-    config.menuItems.forEach((item) => {
+    config.mobileMenuItems.forEach((item) => {
       const menuItem = new DOMParser().parseFromString(`<a href="${item.linkName}" class="mobile-menu__item" >${item.title}</a>`, 'text/html').body
         .firstChild;
 
       mobileMenuContainter.append(menuItem);
+      menuItem.addEventListener('click', this.hideMobileMenu.bind(this));
     });
+  }
+
+  hideMobileMenu() {
+    this.mobileMenu.classList.add('mobile-menu__hidden');
+  }
+
+  showMobileMenu() {
+    this.mobileMenu.classList.remove('mobile-menu__hidden');
   }
 
   fillQuestionnaire() {
