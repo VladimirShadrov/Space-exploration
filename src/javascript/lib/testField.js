@@ -28,6 +28,17 @@ export class TextField {
   init() {
     const textField = `<input type="text" class="${this.options.className}" placeholder="${this.options.placeholder}" />`;
     this.textField = new DOMParser().parseFromString(textField, 'text/html').body.firstChild;
+
+    this.textField.addEventListener('input', () => (this.valid ? this.textField.classList.remove('anketa__filter__invalid') : null));
+  }
+
+  /**
+   * @description Добавляет невалидному полю дополнительный класс
+   */
+  validate() {
+    if (!this.valid) {
+      this.textField.classList.add('anketa__filter__invalid');
+    }
   }
 
   /**

@@ -51,6 +51,22 @@
   }
 }
 
+.anketa__filter__invalid {
+  animation: shake 2s infinite;
+}
+
+@keyframes shake {
+  0% {
+    background: white;
+  }
+  50% {
+    background: rgb(252, 170, 184);
+  }
+  100% {
+    background: white;
+  }
+}
+
 .anketa__buttons-wrapper {
   display: flex;
   justify-content: flex-end;
