@@ -11,7 +11,6 @@ export class Anketa {
    */
   init() {
     this.anketa = new DOMParser().parseFromString(this.getAnketaMarkup(), 'text/html').body.firstChild;
-    this.result = new DOMParser().parseFromString(this.getResultMarkup(), 'text/html').body.firstChild;
     this.addFilters(this.filterOptions);
     this.addButton();
     this.modal = new Modal('Заявка в космонавты', this.element);
@@ -46,10 +45,10 @@ export class Anketa {
        <div class="anketa">
          <div class="anketa__content">
            <div class="anketa__result" >
-             <h3 class="anketa__result-title">Уважаемый Семен Горбунков!</h3>
+             <h3 class="anketa__result-title">${this.filters.firstName.value}, подзравляем!</h3>
              <p class="anketa__result-text">
-               Поздравляем! Ваша заявка на поступление в отряд космонавтов принята. В ближайшее время мы рассмотрим Вашу кандидатуру и о результатах
-               сообщим в школу №2009
+               Ваша заявка на поступление в отряд космонавтов принята. В ближайшее время мы рассмотрим Вашу кандидатуру и о результатах
+               сообщим в школу №${this.filters.school.value}.
              </p>
            </div>
          </div>
@@ -85,9 +84,15 @@ export class Anketa {
    * @description Проводит валидация полей блока фильтров, и в случае успеха выводит сообщение о приеме заявки
    */
   acceptAnketa() {
-    console.log('Анкета принята');
+    Object.values(this.filters).forEach((filter) => {
+      filter.validate();
+    });
 
-    this.modal.addContent(this.result);
+    if (Object.values(this.filters).every((filter) => filter.valid)) {
+      const result = new DOMParser().parseFromString(this.getResultMarkup(), 'text/html').body.firstChild;
+
+      this.modal.addContent(result);
+    }
   }
 
   /**
