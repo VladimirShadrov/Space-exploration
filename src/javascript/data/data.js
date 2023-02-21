@@ -20,6 +20,28 @@ export const headerSettings = {
       linkName: '/#effect',
     },
   ],
+  mobileMenuItems: [
+    {
+      title: 'Главная',
+      name: 'main',
+      linkName: '/#',
+    },
+    {
+      title: 'Космонавты',
+      name: 'spacers',
+      linkName: '/#spacers',
+    },
+    {
+      title: 'Ракеты',
+      name: 'rockets',
+      linkName: '/#rockets',
+    },
+    {
+      title: 'Влияние на организм',
+      name: 'effect',
+      linkName: '/#effect',
+    },
+  ],
   logoIconLink: './images/logo.jpg" alt="logo"',
   logoHref: '/#',
   title: 'Ольга Шадрова',
