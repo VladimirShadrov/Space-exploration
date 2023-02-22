@@ -1,17 +1,18 @@
 .slider__container {
   overflow: hidden;
   position: relative;
+  display: flex;
+  justify-content: flex-start;
 }
 
 .slider__row {
   display: flex;
   align-items: stretch;
-  width: 500%;
   transition: all 0.3s;
+  flex-shrink: 0;
 }
 
 .slider__item {
-  width: 20%;
   display: flex;
   max-height: 815px;
 
