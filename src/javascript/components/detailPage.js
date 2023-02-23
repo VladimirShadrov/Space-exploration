@@ -5,7 +5,7 @@ import { Button } from '../lib/button';
 export class DetailPage {
   /**
    * @typedef {Object} CrumbsData
-   * @property {string} link Ссылка, которая будет отображена в адресной строке браузера
+   * @property {string | null} link Ссылка, которая будет отображена в адресной строке браузера
    * @property {string} title Название хлебной крошки
    */
 
@@ -39,6 +39,7 @@ export class DetailPage {
     }
     this.init();
   }
+
   /**
    * @description Инициализация элементов страницы
    */
@@ -125,7 +126,7 @@ export class DetailPage {
   }
 
   /**
-   * @description уничтожает компонент сраницы
+   * @description уничтожает экземпляр компонента сраницы
    */
   destroy() {
     this.page.remove();
