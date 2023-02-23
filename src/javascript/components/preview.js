@@ -34,12 +34,13 @@ export class Preview {
 
   appendSlider(slides) {
     const sliderContainer = this.preview.querySelector('.preview__wrapper');
-    this.slider = new Slider(slides).element;
-    sliderContainer.prepend(this.slider);
+    this.slider = new Slider(slides);
+    sliderContainer.prepend(this.slider.element);
+    this.slider.autoPlay(5000);
   }
 
   destroy() {
-    this.slider.remove();
+    this.slider.destroy();
     this.preview.remove();
   }
 

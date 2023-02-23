@@ -21,7 +21,6 @@ export class Slider {
 
     this.addSliderItems();
     this.getButtons();
-    this.autoPlay(5000);
   }
 
   /**
