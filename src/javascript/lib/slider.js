@@ -1,27 +1,32 @@
 export class Slider {
   /**
    * @description
-   * @param {Array} slides компонент "Слайдер"
+   * @param {string[]} slides Массив путей к изображениям
    */
   constructor(slides = []) {
-    this.init(slides);
-    this.addListeners();
+    this.slides = slides;
+    this.init();
+    this.addEventListeners();
     this.direction = 'next';
-    // this.slidesRow.style.width = 100 * slides.length + '%';
   }
 
-  init(slides) {
+  /**
+   * @description Инициализация элементов слайдера
+   */
+  init() {
     this.slider = new DOMParser().parseFromString(this.getSliderHtmlString(), 'text/html').body.firstChild;
     this.sliderContainer = this.slider.querySelector('.slider__container');
-
     this.slidesRow = this.slider.querySelector('.slider__row');
-    this.slidesRow.style.width = `${100 * slides.length}%`;
+    this.slidesRow.style.width = this.slidesRowWidth;
 
-    this.getSliderItems(slides);
+    this.addSliderItems();
     this.getButtons();
-    this.autoPlay();
+    this.autoPlay(5000);
   }
 
+  /**
+   * @returns Разметку слайдера в виде строки
+   */
   getSliderHtmlString() {
     return `
     <div class="slider">
@@ -29,24 +34,28 @@ export class Slider {
             <div class="slider__row"></div>
         </div>
     </div>
-
     `;
   }
 
-  getSliderItems(slides) {
-    slides.forEach((slide, index, array) => {
+  /**
+   * @description Добаляет слайды в слайдер
+   */
+  addSliderItems() {
+    this.slides.forEach((slide) => {
       const slideItemSrt = `
         <div class="slider__item">
             <img src="${slide}" alt="slide" />
         </div>
         `;
-      this.slideWidth = `${100 / array.length}%`;
       const slideItem = new DOMParser().parseFromString(slideItemSrt, 'text/html').body.firstChild;
       slideItem.style.width = this.slideWidth;
       this.slidesRow.append(slideItem);
     });
   }
 
+  /**
+   * @description Создает кнопки слайдера и добавляет их в разметку
+   */
   getButtons() {
     const buttonContainer = this.slider.querySelector('.slider__container');
     const btnPrev = `
@@ -66,55 +75,142 @@ export class Slider {
     buttonContainer.append(this.prevButton, this.nextButton);
   }
 
-  addListeners() {
-    this.nextButton.addEventListener('click', this.showNextSlide.bind(this));
-    this.prevButton.addEventListener('click', this.showPreviousSlide.bind(this));
-    this.slidesRow.addEventListener('transitionend', this.finishAnimation.bind(this));
+  /**
+   * @description Добавляет слушатели событий
+   */
+  addEventListeners() {
+    this.eventListeners.forEach((listener) => {
+      listener.targetItem.addEventListener(listener.event, listener.callback.bind(this));
+    });
   }
 
+  /**
+   * @description Удаляет слушатели событий
+   */
+  removeEventListeners() {
+    this.eventListeners.forEach((listener) => {
+      listener.targetItem.removeEventListener(listener.event, listener.callback);
+    });
+  }
+
+  /**
+   * @description Показывает следующий слайд
+   */
   showNextSlide() {
     if (this.direction === 'prev') {
       this.direction = 'next';
       this.slidesRow.prepend(this.slidesRow.lastElementChild);
     }
+    this.buttonsDisabled = true;
     this.sliderContainer.style = 'justify-content: flex-start';
     this.slidesRow.style = `
-        width: 500%;
+        width: ${this.slidesRowWidth};
         transform: translateX(-${this.slideWidth})
     `;
   }
 
+  /**
+   * @description Показывает предыдущий слайд
+   */
   showPreviousSlide() {
     if (this.direction === 'next') {
       this.direction = 'prev';
       this.slidesRow.append(this.slidesRow.firstElementChild);
     }
+    this.buttonsDisabled = true;
     this.sliderContainer.style = 'justify-content: flex-end';
     this.slidesRow.style = `
-        width: 500%;
+        width: ${this.slidesRowWidth};
         transform: translateX(${this.slideWidth})
     `;
   }
 
+  /**
+   * @description Переставляет слайды и ленту слайдов. Выполняется по окончании анимации
+   */
   finishAnimation() {
     this.direction === 'next' ? this.slidesRow.append(this.slidesRow.firstElementChild) : this.slidesRow.prepend(this.slidesRow.lastElementChild);
 
     this.slidesRow.style = `
       transition: none;
       transform: translateX(0);
-      width: 500%;
+      width: ${this.slidesRowWidth};
     `;
+    this.buttonsDisabled = false;
     setTimeout(() => (this.slidesRow.style.transition = '0.3s'));
   }
 
-  autoPlay() {
-    setInterval(() => this.showNextSlide(), 5000);
+  /**
+   * @description Воспроизводит показ следующего слайда в автоматическом режиме с заданным интервалом
+   * @param {number} delay Задержка, с которой будет производится смена слайдов
+   */
+  autoPlay(delay) {
+    setInterval(() => this.showNextSlide(), delay);
   }
 
+  /**
+   * @description Уничтожает экземпляр компонента и удаляет слушатели событий
+   */
   destroy() {
+    this.removeEventListeners();
     this.slider.remove();
   }
 
+  /**
+   * @description Управляет доступностью кнопок слайдера
+   * @param {boolean} value Значение доступности кнопок слайдера
+   */
+  set buttonsDisabled(value) {
+    this.sliderButtons.forEach((button) => (button.disabled = value));
+  }
+
+  /**
+   * @returns Массив кнопок слайдера
+   */
+  get sliderButtons() {
+    return [this.nextButton, this.prevButton];
+  }
+
+  /**
+   * @returns Ширина слайда
+   */
+  get slideWidth() {
+    return `${100 / this.slides.length}%`;
+  }
+
+  /**
+   * @returns Ширина ленты слайдов
+   */
+  get slidesRowWidth() {
+    return `${100 * this.slides.length}%`;
+  }
+
+  /**
+   * @returns Массив для установки/удаления слушателей событий
+   */
+  get eventListeners() {
+    return [
+      {
+        targetItem: this.nextButton,
+        event: 'click',
+        callback: this.showNextSlide,
+      },
+      {
+        targetItem: this.prevButton,
+        event: 'click',
+        callback: this.showPreviousSlide,
+      },
+      {
+        targetItem: this.slidesRow,
+        event: 'transitionend',
+        callback: this.finishAnimation,
+      },
+    ];
+  }
+
+  /**
+   * @returns HTML разметка слайдера
+   */
   get element() {
     return this.slider;
   }
