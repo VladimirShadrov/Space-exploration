@@ -11,7 +11,7 @@ export class Anketa {
    */
   init() {
     this.anketa = new DOMParser().parseFromString(this.getAnketaMarkup(), 'text/html').body.firstChild;
-    this.addFilters(this.filterOptions);
+    this.addFilters();
     this.addButton();
     this.modal = new Modal('Заявка в космонавты', this.element);
   }
@@ -56,11 +56,14 @@ export class Anketa {
     `;
   }
 
-  addFilters(filterArr) {
+  /**
+   * @description Создает объект с текстовыми полями компонента
+   */
+  addFilters() {
     const filtersContainer = this.anketa.querySelector('.anketa__filters');
     this.filters = {};
 
-    filterArr.forEach((filter) => {
+    this.filterOptions.forEach((filter) => {
       this.filters[filter.fieldName] = new TextField(filter);
       filtersContainer.prepend(this.filters[filter.fieldName].element);
     });
