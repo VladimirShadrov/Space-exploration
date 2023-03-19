@@ -14,4 +14,9 @@ export const routes = [
   { path: 'rockets/souz', component: DetailPage },
   { path: 'rockets/proton', component: DetailPage },
   { path: 'rockets/buran', component: DetailPage },
+  { path: 'effect/blood', component: DetailPage },
+  { path: 'effect/bones', component: DetailPage },
+  { path: 'effect/endocrine', component: DetailPage },
+  { path: 'effect/nervous', component: DetailPage },
+  { path: 'effect/respiratory', component: DetailPage },
 ];
