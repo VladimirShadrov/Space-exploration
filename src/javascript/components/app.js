@@ -1,4 +1,3 @@
-import { createElement } from '../lib/functions';
 import { Footer } from './footer';
 import { footerSettings } from '../data/data';
 import { Content } from './content';
