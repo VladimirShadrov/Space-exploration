@@ -79,7 +79,6 @@ export class Content {
 
   show404page() {
     this.activePage = new Page404();
-    this.content.innerHTML = '';
     this.content.append(this.activePage.element);
   }
 
