@@ -68,7 +68,6 @@ export class Content {
           break;
       }
     } else {
-      console.log('Такого роута нету');
       this.show404page();
     }
   }
