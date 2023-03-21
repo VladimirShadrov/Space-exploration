@@ -3,14 +3,12 @@ export class Page404 {
     this.init();
   }
   init() {
-    this.layout = new DOMParser().parseFromString(this.getPageMarkup, 'text/html').body.firstElementChild;
-  }
-  getPageMarkup() {
-    return `
+    const markup = `
     <div class="page404">
         <h1 class="page404__title">Такой страницы не существует</h1>
     </div>
     `;
+    this.layout = new DOMParser().parseFromString(markup, 'text/html').body.firstChild;
   }
   destroy() {
     this.layout.remove();
