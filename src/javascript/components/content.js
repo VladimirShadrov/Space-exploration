@@ -2,6 +2,7 @@ import { createElement } from '../lib/functions';
 import { mainPageData } from '../data/data';
 import { categoriesPageData } from '../data/data';
 import { detailPageData } from '../data/data';
+import { Page404 } from './page404';
 
 import { routes } from '../router/routes';
 import { router } from '../router/router';
@@ -66,11 +67,20 @@ export class Content {
           this.appendHtml(route, detailData);
           break;
       }
+    } else {
+      console.log('Такого роута нету');
+      this.show404page();
     }
   }
 
   appendHtml(route, data) {
     this.activePage = new route.component(data);
+    this.content.append(this.activePage.element);
+  }
+
+  show404page() {
+    this.activePage = new Page404();
+    this.content.innerHTML = '';
     this.content.append(this.activePage.element);
   }
 
