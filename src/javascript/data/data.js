@@ -207,6 +207,12 @@ export const categoriesPageData = {
         description: 'Уменьшение объема легких',
         link: '/#effect/respiratory',
       },
+      {
+        image: './images/group/impact/adaptation/adaptation5.jpg',
+        title: 'Адаптация после полета',
+        description: 'С какими трудностями сталкиваются космонавты после возвращения на Землю',
+        link: '/#effect/adaptation',
+      },
     ],
   },
 };
@@ -526,6 +532,32 @@ export const detailPageData = [
       './images/group/impact/respiratory/respiratory3.jpg',
       './images/group/impact/respiratory/respiratory4.jpg',
       './images/group/impact/respiratory/respiratory5.jpg',
+    ],
+  },
+  {
+    id: 'effect/adaptation',
+    crumbs: [
+      { link: '/#', title: 'Главная' },
+      { link: '/#effect', title: 'Влияние на организм' },
+      {
+        link: null,
+        title: 'Адаптация',
+      },
+    ],
+    title: 'Жизнь после нахождения в космическом пространстве',
+    text: [
+      'Синдром космической адаптации — так называется состояние, которое испытывает человек как при привыкании к невесомости, так и после возвращения на Землю. Обычно он длится несколько суток и по симптомам напоминает морскую болезнь: слабость, тошнота, головокружение, потеря аппетита. Такие ощущения вызваны перестройкой организма — адаптацией вестибулярного аппарата и органов чувств, перераспределением крови внутри кровеносной системы.',
+      'Помимо навыков ходьбы, прибывшему на Землю космонавту приходится вновь учиться обращаться с предметами, которые больше не зависают в пространстве, а под действием гравитации падают вниз, пользоваться туалетом и ванной, есть обычную пищу и удерживать ее в желудке.',
+      'В настоящее время разработаны и опробованы эффективные технологии послеполетной реабилитации космонавтов. Это позволило ограничить длительность реабилитационного периода после длительного космического полета двумя-тремя неделями.',
+    ],
+    image: './images/group/impact/adaptation/adaptation2.jpg',
+    btnText: 'Галерея',
+    slides: [
+      './images/group/impact/adaptation/adaptation1.jpg',
+      './images/group/impact/adaptation/adaptation2.jpg',
+      './images/group/impact/adaptation/adaptation3.jpg',
+      './images/group/impact/adaptation/adaptation4.jpg',
+      './images/group/impact/adaptation/adaptation5.jpg',
     ],
   },
 ];
