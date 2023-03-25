@@ -19,4 +19,5 @@ export const routes = [
   { path: 'effect/endocrine', component: DetailPage },
   { path: 'effect/nervous', component: DetailPage },
   { path: 'effect/respiratory', component: DetailPage },
+  { path: 'effect/adaptation', component: DetailPage },
 ];
